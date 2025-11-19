@@ -16,7 +16,7 @@ function App(){
     <table className='bp4-html-table modifier'>
       <thead>
         <tr>
-          <th>id</th>
+          <th></th>
           <th>name</th>
           <th>email</th>
           <th>website</th>
