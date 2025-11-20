@@ -1,10 +1,14 @@
 import { useState,useEffect } from 'react';
-import {Button,EditableText} from '@blueprintjs/core';
+import {Button,EditableText,InputGroup} from '@blueprintjs/core';
 import "@blueprintjs/core/lib/css/blueprint.css";
 import './App.css';
 
 function App(){
   const[users,setUsers]=useState([])
+  const[newName,setNewname]=useState([])
+  const[newEmail,setNewemail]=useState([])
+  const[newWebsite,setNewwebsite]=useState([])
+
  useEffect(()=>{
   fetch("https://jsonplaceholder.typicode.com/users")
   .then((response)=>response.json())
@@ -38,6 +42,34 @@ function App(){
           </tr>
         )}
       </tbody>
+      <tfoot>
+        <tr>
+          <td></td>
+          <td>
+          <InputGroup 
+              value={newName}
+              onChange={(e)=>setNewname(e.target.value)}
+              placeholder="Enter a name"
+          />
+          </td>
+           <td>
+          <InputGroup 
+              value={newEmail}
+              onChange={(e)=>setNewemail(e.target.value)}
+              placeholder="Enter a Mail"
+          />
+          </td> <td>
+          <InputGroup 
+              value={newWebsite}
+              onChange={(e)=>setNewwebsite(e.target.value)}
+              placeholder="Enter a website"
+          />
+          </td>
+          <td>
+            <Button intent='success'>Add user</Button>
+          </td>
+        </tr>
+      </tfoot>
     </table>
   </div>
  )
