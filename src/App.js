@@ -12,7 +12,7 @@ function App(){
  useEffect(()=>{
   fetch("https://jsonplaceholder.typicode.com/users")
   .then((response)=>response.json())
-  .then((json)=>setUsers(json))
+  .then((json)=>setUsers(json));
  },[])
 
  return(
