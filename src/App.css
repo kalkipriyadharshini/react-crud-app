@@ -1,38 +1,63 @@
+/* Center EVERYTHING on the page */
 .App {
+  padding: 30px;
+  max-width: 900px;       /* Control width so content stays centered */
+  margin: 0 auto;         /* Centers the entire app */
+  overflow: hidden;       /* Prevents overflow on all sides */
+}
+
+/* Center header text */
+.app-header {
   text-align: center;
+  margin-bottom: 25px;
+  padding: 15px 0;
+  background: #f5f8fa;
+  color: #202B33;
+  font-size: 28px;
+  font-weight: 600;
+  border-radius: 8px;
+  border: 1px solid #d0d0d0;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+  width: 100%;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Table full width */
+.bp4-html-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  font-size: 16px;
+  overflow: hidden;      /* Hides overflow from table edges */
+  border-radius: 8px;    /* Smooth rounded corners */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Table borders */
+.bp4-html-table th,
+.bp4-html-table td {
+  border: 1px solid #d0d0d0;
+  padding: 12px 16px;
+  text-align: left;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Header style */
+.bp4-html-table th {
+  background: #f5f8fa;
+  font-weight: 600;
+  font-size: 17px;
+  color: #202B33;
+}
+
+/* Hover effect */
+.bp4-html-table tr:hover {
+  background: #f0f4f7;
+}
+
+/* Footer input height */
+tfoot input {
+  height: 34px;
+}
+.action-buttons {
   display: flex;
-  flex-direction: column;
+  gap: 10px;  /* Space between Update and Delete buttons */
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }

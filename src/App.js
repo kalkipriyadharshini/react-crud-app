@@ -4,7 +4,6 @@ import "@blueprintjs/core/lib/css/blueprint.css";
 import './App.css';
 
 function App() {
-
   const [users, setUsers] = useState([]);
   const [newName, setNewname] = useState("");
   const [newEmail, setNewemail] = useState("");
@@ -98,7 +97,8 @@ function Updateuser(id){
   }
 
   return (
-    <div className='App'>
+      <div className='App'>
+      <h1 className="app-header">User Management Dashboard</h1>
       <table className='bp4-html-table modifier'>
         <thead>
           <tr>
@@ -118,8 +118,10 @@ function Updateuser(id){
               <td><EditableText onChange={value=>OnchangeHandler(user.id,"email",value)}value={user.email} /></td>
               <td><EditableText onChange={value=>OnchangeHandler(user.id,"website",value)}value={user.website} /></td>
               <td>
-                <Button intent='primary' onClick={()=>Updateuser(user.id)}>Update</Button>
+                <div className='action-buttons'>
+                <Button intent='primary' onClick={()=>Updateuser(user.id)}style={{marginRight:"8px"}}>Update</Button>
                 <Button intent='danger'onClick={()=>deleteUser(user.id)}>Delete</Button>
+                </div>
               </td>
             </tr>
           )}
